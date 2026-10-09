@@ -524,7 +524,7 @@ def fetch_dachshunds(fetcher, period: str = "day",
         return None
     dedicated, source = got
     general = []
-    time.sleep(2)
+    time.sleep(6)   # Reddit rate-limits back-to-back feed requests
     g = fetcher(period, TITLE_FILTERED_SUBS)
     if g:
         general = [p for p in g[0] if is_dog_post(p["subreddit"], p["title"])]
@@ -533,7 +533,7 @@ def fetch_dachshunds(fetcher, period: str = "day",
     usable = [p for p in dedicated + general
               if not p.get("is_gallery") and not is_excluded(p, exclude or set())]
     if period == "day" and len(usable) < THIN_POOL + SKIP_TOP:
-        time.sleep(2)
+        time.sleep(6)   # Reddit rate-limits back-to-back feed requests
         w = fetcher("week", DACHSHUND_SUBS)
         if w:
             log(f"thin day ({len(usable)} usable); adding {len(w[0])} posts from this week's top")

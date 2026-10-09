@@ -49,6 +49,11 @@
         }
       ]
     ],
-    "owner": "jm88825s-team"
+    "owner": "jm88825s-team",
+    "extra": {
+      "eas": {
+        "projectId": "9527852d-481a-4882-a759-7705403e93c7"
+      }
+    }
   }
 }
