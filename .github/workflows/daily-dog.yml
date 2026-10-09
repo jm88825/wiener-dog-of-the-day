@@ -1,0 +1,47 @@
+name: Daily dog
+
+on:
+  schedule:
+    # 13:17 UTC = 9:17 AM EDT (8:17 AM EST in winter; GitHub cron is always UTC).
+    # Scheduled runs can start a few minutes late when GitHub is busy.
+    - cron: "17 13 * * *"
+  workflow_dispatch: {}   # "Run workflow" button for manual runs
+
+permissions:
+  contents: write         # needed to commit backend/data
+
+concurrency:
+  group: daily-dog
+  cancel-in-progress: false
+
+jobs:
+  pick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ffmpeg (optional; used to measure clip loudness)
+        run: command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends ffmpeg) || true
+
+      - name: Pick today's wiener dog
+        env:
+          TZ: America/New_York
+        run: python3 backend/pick_dog.py
+
+      - name: Commit data if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backend/data
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Wiener dog of the day: $(TZ=America/New_York date +%F)"
+            git pull --rebase --autostash origin main   # in case main moved during the run
+            git push
+          fi

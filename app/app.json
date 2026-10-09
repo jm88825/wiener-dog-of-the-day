@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Wiener Dog of the Day",
+    "slug": "wiener-dog-of-the-day",
+    "scheme": "wienerdogofday",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "description": "One adorable dachshund picture or video every day, with full credit to the original poster.",
+    "primaryColor": "#C8743A",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.wienerdogofday.app"
+    },
+    "android": {
+      "package": "com.wienerdogofday.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#F8D7B0",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png"
+      },
+      "permissions": [],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ],
+      "predictiveBackGestureEnabled": false,
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "name": "Wiener Dog of the Day",
+      "themeColor": "#C8743A",
+      "backgroundColor": "#FFF6EC"
+    },
+    "plugins": [
+      "expo-video",
+      "expo-image",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "backgroundColor": "#F8D7B0"
+        }
+      ]
+    ],
+    "owner": "jm88825s-team"
+  }
+}

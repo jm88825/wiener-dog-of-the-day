@@ -1,0 +1,258 @@
+# 🌭 Wiener Dog of the Day
+
+An Android app (React Native / Expo, TypeScript) that shows one dachshund
+(wiener dog / sausage dog / doxie) picture or video every day, picked at random
+from Reddit and X, with a short blurb, plus an archive of the last 60 days.
+Sibling of [Cat of the Day](https://github.com/jm88825/cat-of-the-day).
+Every post is credited to its creator with a link to the original.
+
+```
+wiener-dog-of-the-day/
+├── app/                      Expo app (Android package com.wienerdogofday.app)
+│   ├── config.ts             ← the ONE place the data URL is set
+│   ├── App.tsx, src/         screens, components
+│   ├── app.json, eas.json    Expo + EAS build config (Android AAB)
+│   └── assets/               app icon / splash (source drawing in assets/source/)
+├── backend/
+│   ├── pick_dog.py           daily picker (Python 3.9+, stdlib only)
+│   ├── serve.py              local test server (port 8081, with CORS)
+│   ├── example-x-pick.json   template for recording an X post as the pick
+│   └── data/                 latest.json + archive.json (served as static files)
+├── .github/workflows/daily-dog.yml   runs the picker daily at 13:17 UTC
+├── privacy.html / PRIVACY.md  privacy policy (served by GitHub Pages)
+├── store-assets/             512px Play icon + 1024x500 feature graphic
+├── screenshots/              web-build screenshots (390x844)
+└── tools/                    icon + screenshot + sound-check scripts
+```
+
+## How it works
+
+1. **Picker** – `backend/pick_dog.py` reads today's top posts from two
+   multireddits and merges them: the dachshund subs (r/Dachshund, r/Dachshunds,
+   plus r/wienerdogs, r/sausagedogs, r/doxies, which currently 404 but are
+   harmless) where every post counts, and general dog subs (r/LongBois, r/aww,
+   r/dogpictures, r/rarepuppers, r/puppies, r/DOG, r/dogs,
+   r/WhatsWrongWithYourDog, r/dogswithjobs, r/Zoomies, r/PuppySmiles, r/blop)
+   where only titles mentioning dachshund/doxie/wiener/sausage count. On a thin
+   day it adds this week's top dachshund posts. It skips NSFW posts, galleries and
+   anything that isn't an image, GIF or video on `i.redd.it`, `v.redd.it` or
+   Imgur.
+   - **Hidden gems, not the #1 post:** it skips the day's top 3 (everyone has
+     already seen those), drops posts that were already a wiener dog of the day (by
+     permalink / Reddit id) and, when possible, everything from yesterday's
+     subreddit. From the next ≤60 candidates it draws a weighted-random post:
+     weight = 1/√(position) ÷ √(posts from that subreddit), so higher-ranked
+     posts are a bit likelier but small subs get a fair shot. The random seed is
+     the date, so re-running on the same day gives the same pick. `--top`
+     restores the old "highest-ranked post" behaviour; `--seed X` re-rolls.
+   - **X picks:** a separate daily routine can replace the Reddit pick with a
+     quirky/heartwarming X post, and add a 1–2 sentence `blurb` to any day.
+     See [`backend/X_PICK.md`](backend/X_PICK.md).
+   - It tries Reddit's JSON listing first (www → old → api.reddit.com); this
+     gives real upvote counts.
+   - If that's blocked (it often is for servers and cloud IPs; it was blocked
+     when this was built), it falls back to Reddit's public **RSS feed** of the
+     same "top of the day" listing. The feed is ordered by score but doesn't
+     include the number, so `score` is saved as `null` and the app shows
+     "#N on Reddit's top dachshund list" instead of an upvote count. Numbers are
+     never guessed.
+   - If every source fails, it exits with an error and leaves the existing data
+     alone.
+   - `v.redd.it` videos: `mediaUrl` is Reddit's direct MP4 (the same file as the
+     API's `fallback_url`). **These MP4s are video-only**, because Reddit keeps
+     the audio in a separate track that only its streaming manifests reference.
+     So the picker also saves `hlsUrl` (`HLSPlaylist.m3u8`) and `dashUrl`
+     (`DASHPlaylist.mpd`) and checks that they list an audio track (`hasAudio`).
+     If ffmpeg is installed, it also measures loudness (`audioMeanDb`) and flags
+     nearly inaudible clips (`audioQuiet`).
+   - The app plays **HLS first, then DASH (Android only), then the silent MP4**.
+     If a stream fails or loads without audio, it moves to the next one. The
+     sound button only appears when the playing stream really has audio;
+     otherwise it says "No sound in this clip". Desktop browsers get the silent
+     MP4, because Chrome can't play Reddit's HLS natively.
+   - `python3 backend/pick_dog.py --refresh-media` re-derives these fields for
+     every stored video. Normal daily runs fill them in for older entries
+     automatically.
+2. **Hosting** – `backend/data/*.json` are plain static files. GitHub Pages
+   serves them for free, and the GitHub Actions workflow refreshes them every
+   day.
+3. **App** – downloads `latest.json` and `archive.json` from `DATA_BASE_URL`.
+
+### Picker commands
+
+```bash
+python3 backend/pick_dog.py                 # pick today's wiener dog (date = today in New York time)
+python3 backend/pick_dog.py --dry-run       # show the pick without writing files
+python3 backend/pick_dog.py --backfill 7    # fill empty past days (marked "backfilled": true)
+python3 backend/pick_dog.py --from-json my-pick.json   # record an X (or other) post instead
+python3 backend/pick_dog.py --set-blurb "Text."         # add/replace today's blurb ("" removes it)
+python3 backend/pick_dog.py --top                       # old behaviour: highest-ranked post
+```
+
+For X posts, see [`backend/X_PICK.md`](backend/X_PICK.md) and
+`backend/example-x-pick.json`. Other manual picks need `title`, `author`,
+`permalink` (the https link to the original post), `mediaType`
+(`image` | `gif` | `video`) and `mediaUrl`, optionally `score`, `scoreLabel`,
+`width`, `height`, `thumbnail`, `blurb` and `date`. Once a day has a
+manual pick, the scheduled run won't overwrite it unless you pass `--force`.
+**Only use media you're allowed to show, and always link the original post.**
+
+## Run it locally
+
+Requirements: Node 20.19.4+ or 22 LTS, and Python 3.9+.
+
+```bash
+# 1) data
+python3 backend/pick_dog.py
+python3 backend/serve.py            # serves backend/data at http://localhost:8081
+
+# 2) app  (by default it reads the live GitHub Pages data; override for local data:)
+cd app
+npm install
+npx tsc --noEmit                    # type check
+EXPO_PUBLIC_DATA_URL=http://localhost:8081 npx expo start --web --port 8082
+#   (Metro also defaults to 8081, so pick another port)
+# or build static web files: npx expo export --platform web  → app/dist
+```
+
+On an Android emulator, set `EXPO_PUBLIC_DATA_URL=http://10.0.2.2:8081`. On a real phone, use
+`http://<your-PC-LAN-IP>:8081`. Release builds only allow `https://`, so
+production must use your GitHub Pages URL.
+
+The icon is an original drawing made with Pillow (`python3 tools/draw-dachshund.py`
+writes `app/assets/source/dachshund-icon-source.png`). Regenerate the icons from it:
+`python3 -m venv tools/.venv && tools/.venv/bin/pip install pillow && tools/.venv/bin/python tools/make-icons.py`.
+This also writes masked launcher previews to `store-assets/previews/`. Feature
+graphic: `cd tools && npm install && node make-feature-graphic.mjs` (uses
+Google Chrome). After changing `EXPO_PUBLIC_DATA_URL`, add `--clear` to
+`expo export` / `expo start` so the new value is picked up. Retake the screenshots: `node tools/screenshot.mjs` while the
+web build is served on port 8090 (`cd app/dist && python3 -m http.server 8090`).
+
+---
+
+## Publishing: step by step
+
+### A. Put the data on GitHub Pages (free)
+
+1. Create a **public** GitHub repo, for example `wiener-dog-of-the-day`, and push this
+   whole folder to its `main` branch:
+   ```bash
+   cd wiener-dog-of-the-day
+   git init && git add . && git commit -m "Wiener Dog of the Day"
+   git branch -M main
+   git remote add origin https://github.com/jm88825/wiener-dog-of-the-day.git
+   git push -u origin main
+   ```
+2. In the repo, go to **Settings → Pages → Build and deployment → Source:
+   "Deploy from a branch"**, then choose **Branch: `main`, folder `/ (root)`** and
+   click Save. The empty `.nojekyll` file makes Pages serve the files as they
+   are.
+3. After a minute, check that these load in a browser:
+   - `https://jm88825.github.io/wiener-dog-of-the-day/backend/data/latest.json`
+   - `https://jm88825.github.io/wiener-dog-of-the-day/privacy.html` (use this as the
+     privacy policy URL on Google Play)
+4. Go to **Settings → Actions → General → Workflow permissions** and choose
+   **"Read and write permissions"**, so the workflow can commit the new data.
+5. Go to **Actions → Daily dog → Run workflow** to test it once. After that it
+   runs every day at 13:07 UTC (9:07 AM Eastern in summer, 8:07 AM in winter).
+   Each run commits `backend/data/`, and Pages republishes it automatically.
+   - If the run fails with "no data source worked", Reddit is blocking
+     GitHub's servers. The app keeps showing the last good day. Options: run
+     the picker on your own computer or a small server and push the result, or
+     record a pick by hand with `--from-json`.
+
+### B. Point the app at your data
+
+**Done.** `app/config.ts` already points at GitHub Pages:
+
+```ts
+const PRODUCTION_DATA_URL = 'https://jm88825.github.io/wiener-dog-of-the-day/backend/data';
+// dev override: EXPO_PUBLIC_DATA_URL=http://localhost:8081 npx expo start --port 8082
+```
+
+The privacy policy contact (and content-removal address) is
+**jm88825@gmail.com**. Use the same address as the developer contact email in the
+Play Console.
+
+### C. Build the Android App Bundle (AAB) with EAS (free tier)
+
+**Status: done for v1.0.0.** The EAS project is
+[`@jm88825s-team/wiener-dog-of-the-day`](https://expo.dev/accounts/jm88825s-team/projects/wiener-dog-of-the-day)
+(`extra.eas.projectId` and `owner` are in `app.json`). The Android upload
+keystore was generated in the cloud and is stored on EAS; view or back it up
+with `npx eas-cli@latest credentials -p android`.
+
+To build again (log in with `npx eas-cli@latest login`, or set an `EXPO_TOKEN`):
+
+```bash
+cd app
+npx eas-cli@latest build -p android --profile production   # .aab for Google Play
+npx eas-cli@latest build -p android --profile preview      # installable .apk for testing
+```
+
+Versioning is **local** (`appVersionSource: "local"` in `eas.json`). Before each
+new Play upload, raise `android.versionCode` in `app.json` (1 → 2 → 3 …). Play
+rejects duplicate versionCodes. Also bump `version` (for example 1.0.1) for
+user-visible releases. Free-tier EAS builds can wait in a queue for a while
+before they start.
+
+### D. Upload to Google Play
+
+1. In the [Play Console](https://play.google.com/console), click **Create app**:
+   name "Wiener Dog of the Day", type App, Free.
+2. **Testing → Internal testing → Create new release**, then upload the `.aab`.
+   Keep **Play App Signing** turned on (the default). New personal developer
+   accounts must also run a **closed test with at least 12 testers for 14
+   days** before they can go to Production.
+3. Fill in **App content**:
+   - **Privacy policy:** `https://jm88825.github.io/wiener-dog-of-the-day/privacy.html`
+   - **Data safety:** "No data collected" and "No data shared". The app has no
+     analytics, accounts or ads.
+   - **Ads:** No ads. **Target audience:** 13+ is safest, because the content
+     is user-generated.
+   - **Content rating** questionnaire: the app shows user-generated content from
+     third-party sites. Say so honestly.
+4. **Store listing:** use `store-assets/icon-512.png`,
+   `store-assets/feature-graphic-1024x500.png`, and at least 2 phone
+   screenshots. Take them on a real device or emulator. `screenshots/` has web
+   previews.
+   - Short description example: "One adorable dachshund picture or video, every day."
+5. Later updates: bump `version`, run `eas build` again, and upload the new AAB.
+   (`eas submit -p android` can upload for you once you add a Play service
+   account key.)
+
+### Play policy notes (important for an app that shows other people's posts)
+
+- **Credit every post.** Each post shows "Posted by u/X on r/Y – view original"
+  with a link to the source. Keep that.
+- **Don't re-host media.** The app streams images and videos from the original
+  host (i.redd.it, v.redd.it, Imgur). It never copies them. If a post is
+  deleted, it disappears from the app too.
+- **Impersonation / IP policy:** don't call the app "Reddit ..." or use
+  Reddit's logo. The in-app line "not affiliated with Reddit" helps. Respond
+  quickly to takedown requests at the contact email in the privacy policy.
+- **User-generated content:** the app only shows SFW posts. The picker skips
+  NSFW posts, and the source subreddits are moderated, but the picks are
+  automatic. Check them now and then. Use `--from-json` to replace a bad pick.
+- **Reddit's terms:** using Reddit's public feeds in a commercial or
+  high-volume way may require their Data API terms or approval. This app makes
+  one request per day from a server, not one per user.
+- **iOS later:** `app.json` already sets `ios.bundleIdentifier`, so you can run
+  `eas build -p ios` once you have an Apple developer account.
+
+## Status
+
+- Repo: <https://github.com/jm88825/wiener-dog-of-the-day>. GitHub Pages serves `main`
+  from the root folder.
+  - Data: <https://jm88825.github.io/wiener-dog-of-the-day/backend/data/latest.json>
+    (and `archive.json`)
+  - Privacy policy: <https://jm88825.github.io/wiener-dog-of-the-day/privacy.html>
+- ✅ The "Daily dog" workflow ran on GitHub's servers on 2026-09-30 and
+  committed data. Reddit's JSON API returned 403 there (www, old and api hosts);
+  the RSS fallback worked, so scores are `null` and the rank is shown instead.
+- ✅ Web build exported and screenshotted; TypeScript and `expo-doctor` pass;
+  Android `expo prebuild` config checked (package, permissions, name).
+- ✅ Stream audio checked: ffprobe/ffmpeg and Chrome's hls.js/dash.js decode
+  audio from the HLS and DASH manifests; the MP4 files have no audio track.
+- ⚠️ Native sound on a real phone still has to be confirmed with the new
+  build.

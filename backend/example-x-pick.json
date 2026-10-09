@@ -1,0 +1,18 @@
+{
+  "source": "x",
+  "date": "2026-10-10",
+  "postUrl": "https://x.com/example_handle/status/1234567890123456789",
+  "authorHandle": "example_handle",
+  "authorName": "Example Name",
+  "likes": 42,
+  "title": "FORMAT EXAMPLE ONLY - not a real post",
+  "text": "<the post's full text, copied verbatim>",
+  "blurb": "This little red doxie has claimed the sunniest spot on the couch and is stretched out to full sausage length.",
+  "xMedia": {
+    "type": "photo",
+    "media_key": "3_0000000000000000000",
+    "url": "https://pbs.twimg.com/media/EXAMPLE.jpg",
+    "width": 1200,
+    "height": 1600
+  }
+}
