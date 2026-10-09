@@ -46,7 +46,7 @@ await page.screenshot({ path: path.join(out, 'archive.png') });
 console.log('archive rows:', rows);
 
 // Open a past day from the archive to check the detail view.
-await page.locator('[role="button"][aria-label*=":"]').nth(1).click();
+await page.locator('[role="button"][aria-label*=":"]').first().click();
 await page.getByText('view original').first().waitFor({ timeout: 20000 });
 await page.waitForTimeout(1500);
 await page.screenshot({ path: path.join(out, 'archive-day.png') });

@@ -31,7 +31,7 @@ export function formatLikes(n: number): string {
   return String(n);
 }
 
-/** e.g. "❤️ 1.2K likes on X", "▲ 12.3k upvotes", "🔥 #2 on Reddit's top dachshund list". */
+/** e.g. "❤️ 1.2K likes on X", "▲ 12.3k upvotes", "🔥 #2 on Reddit's doxie list". */
 export function popularityLabel(p: DogPick): string {
   if (sourceOf(p) === 'x') {
     const likes = typeof p.likes === 'number' ? p.likes : p.score;
@@ -39,8 +39,8 @@ export function popularityLabel(p: DogPick): string {
     return '💎 A hidden gem from X';
   }
   if (typeof p.score === 'number') return `▲ ${formatCount(p.score)} ${p.scoreLabel ?? 'upvotes'}`;
-  if (p.rank && p.rank <= 10) return `🔥 #${p.rank} on Reddit's top dachshund list`;
-  if (p.rank) return `💎 Hidden gem · #${p.rank} on Reddit's dachshund list today`;
+  if (p.rank && p.rank <= 10) return `🔥 #${p.rank} on Reddit's doxie list`;
+  if (p.rank) return `💎 Hidden gem · #${p.rank} today`;
   return '🔥 Trending today';
 }
 

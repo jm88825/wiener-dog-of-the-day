@@ -54,7 +54,7 @@ wiener-dog-of-the-day/
      when this was built), it falls back to Reddit's public **RSS feed** of the
      same "top of the day" listing. The feed is ordered by score but doesn't
      include the number, so `score` is saved as `null` and the app shows
-     "#N on Reddit's top dachshund list" instead of an upvote count. Numbers are
+     "#N on Reddit's doxie list" / "Hidden gem · #N today" instead of an upvote count. Numbers are
      never guessed.
    - If every source fails, it exits with an error and leaves the existing data
      alone.
