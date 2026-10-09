@@ -5,7 +5,12 @@ on:
     # 13:17 UTC = 9:17 AM EDT (8:17 AM EST in winter; GitHub cron is always UTC).
     # Scheduled runs can start a few minutes late when GitHub is busy.
     - cron: "17 13 * * *"
-  workflow_dispatch: {}   # "Run workflow" button for manual runs
+  workflow_dispatch:      # "Run workflow" button for manual runs
+    inputs:
+      dry_run:
+        description: "Test only: fetch from Reddit and print a pick, write nothing"
+        type: boolean
+        default: false
 
 permissions:
   contents: write         # needed to commit backend/data
@@ -31,7 +36,13 @@ jobs:
       - name: Pick today's wiener dog
         env:
           TZ: America/New_York
-        run: python3 backend/pick_dog.py
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python3 backend/pick_dog.py --dry-run --force
+          else
+            python3 backend/pick_dog.py
+          fi
 
       - name: Commit data if it changed
         run: |
