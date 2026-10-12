@@ -1,0 +1,40 @@
+{
+  "source": "x",
+  "date": "2026-10-12",
+  "postUrl": "https://x.com/CricketthatsCat/status/2109177328144097754",
+  "authorHandle": "CricketthatsCat",
+  "authorName": "Cricket 🦗",
+  "likes": 31,
+  "title": "Weiner dog tried to be a wombat to fight cricket",
+  "text": "Weiner dog tried to be a wombat to fight cricket, little does he know cricket has fought wombats before… https://t.co/oLqTqCuAHi",
+  "blurb": "A black-and-tan doxie squares off with Cricket, a tuxedo cat, for a playful wrestle in the backyard grass. The poster says he was trying to be a wombat, little knowing Cricket has fought wombats before.",
+  "xMedia": {
+    "duration_ms": 7066,
+    "height": 720,
+    "media_key": "13_2109177175899357184",
+    "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2109177175899357184/img/AnxW3REFw22OdgJh.jpg",
+    "type": "video",
+    "variants": [
+      {
+        "bit_rate": 256000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2109177175899357184/vid/avc1/480x270/cZPZL6Lj7oCiBtHz.mp4"
+      },
+      {
+        "bit_rate": 832000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2109177175899357184/vid/avc1/640x360/3DBl8uWVwKbsaiF4.mp4"
+      },
+      {
+        "bit_rate": 2176000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2109177175899357184/vid/avc1/1280x720/dId5vKJkX7IJKD0O.mp4"
+      },
+      {
+        "content_type": "application/x-mpegURL",
+        "url": "https://video.twimg.com/amplify_video/2109177175899357184/pl/DZIOr8pIeeohZBAr.m3u8"
+      }
+    ],
+    "width": 1280
+  }
+}
