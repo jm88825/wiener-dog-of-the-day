@@ -1,0 +1,40 @@
+{
+  "source": "x",
+  "date": "2026-10-13",
+  "postUrl": "https://x.com/agedsousages/status/2109422846330232984",
+  "authorHandle": "agedsousages",
+  "authorName": "agedsousages",
+  "likes": 0,
+  "title": "Look how happy he gets on a pup cup run",
+  "text": "Just created an account.\nGonna share life with my old little sausage dog.\nLook how happy he gets on a pup cup run ❤️🐶 https://t.co/4xhpvmr84s",
+  "blurb": "This silver-muzzled dapple doxie is flopped belly-up in the car, mouth open in a big happy grin, holding paws with their human. The poster says it's what a pup cup run does to their old little sausage dog.",
+  "xMedia": {
+    "duration_ms": 21633,
+    "height": 1280,
+    "media_key": "13_2109422810829303808",
+    "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2109422810829303808/img/kTft7JzQgmOEwZ3o.jpg",
+    "type": "video",
+    "variants": [
+      {
+        "bit_rate": 632000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2109422810829303808/vid/avc1/320x568/U2r2cWazD2d00uo5.mp4"
+      },
+      {
+        "bit_rate": 950000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2109422810829303808/vid/avc1/480x852/wQq4ARQx-BIgnl4h.mp4"
+      },
+      {
+        "bit_rate": 2176000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2109422810829303808/vid/avc1/720x1280/SdrU_2OwwfcwtnyG.mp4"
+      },
+      {
+        "content_type": "application/x-mpegURL",
+        "url": "https://video.twimg.com/amplify_video/2109422810829303808/pl/HAjVbtcstY0yWyUh.m3u8"
+      }
+    ],
+    "width": 720
+  }
+}
