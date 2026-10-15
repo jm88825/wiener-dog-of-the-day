@@ -1,6 +1,25 @@
 {
-  "updatedAt": "2026-10-14T13:54:12+00:00",
+  "updatedAt": "2026-10-15T13:59:00+00:00",
   "days": [
+    {
+      "date": "2026-10-15",
+      "title": "Has anyone seen these?",
+      "subreddit": "dachshunds",
+      "author": "bvalenzuela",
+      "score": null,
+      "permalink": "https://www.reddit.com/r/dachshunds/comments/1x63fsf/has_anyone_seen_these/",
+      "mediaType": "image",
+      "mediaUrl": "https://i.redd.it/8u7vg5qj1ivh1.jpeg",
+      "width": 3024,
+      "height": 4032,
+      "thumbnail": "https://preview.redd.it/8u7vg5qj1ivh1.jpeg?width=640&crop=smart&auto=webp&s=cb15d79d1b101153c7db3120033599f6ed7cb279",
+      "rank": 36,
+      "source": "reddit",
+      "fetchedVia": "rss",
+      "selection": "random",
+      "scoreLabel": "upvotes",
+      "pickedAt": "2026-10-15T13:59:00+00:00"
+    },
     {
       "date": "2026-10-14",
       "title": "Love those expressive ears. 😍",
