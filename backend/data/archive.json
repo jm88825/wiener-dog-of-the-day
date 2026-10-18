@@ -1,6 +1,25 @@
 {
-  "updatedAt": "2026-10-17T13:45:15+00:00",
+  "updatedAt": "2026-10-18T13:46:03+00:00",
   "days": [
+    {
+      "date": "2026-10-18",
+      "title": "Laika n Tovah",
+      "subreddit": "Dachshund",
+      "author": "medivka",
+      "score": null,
+      "permalink": "https://www.reddit.com/r/Dachshund/comments/1x8j151/laika_n_tovah/",
+      "mediaType": "image",
+      "mediaUrl": "https://i.redd.it/kmjbe2tox2wh1.jpeg",
+      "width": 2142,
+      "height": 2856,
+      "thumbnail": "https://preview.redd.it/kmjbe2tox2wh1.jpeg?width=640&crop=smart&auto=webp&s=b80357eb5b15e58b621a95d18ac29c0027f92eb8",
+      "rank": 12,
+      "source": "reddit",
+      "fetchedVia": "rss",
+      "selection": "random",
+      "scoreLabel": "upvotes",
+      "pickedAt": "2026-10-18T13:46:03+00:00"
+    },
     {
       "date": "2026-10-17",
       "title": "Ruby & Zippy",
