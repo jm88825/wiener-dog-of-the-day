@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-10-18T13:56:17+00:00",
+  "updatedAt": "2026-10-19T13:52:47+00:00",
   "days": [
+    {
+      "date": "2026-10-19",
+      "title": "Post breakfast nap",
+      "subreddit": "Dachshund",
+      "author": "SlideOk5001",
+      "score": null,
+      "permalink": "https://www.reddit.com/r/Dachshund/comments/1x9qjdl/post_breakfast_nap/",
+      "mediaType": "image",
+      "mediaUrl": "https://i.redd.it/kz15nhx7odwh1.jpeg",
+      "width": 3060,
+      "height": 4080,
+      "thumbnail": "https://preview.redd.it/kz15nhx7odwh1.jpeg?width=640&crop=smart&auto=webp&s=72775009c279ddbbe175ab4df66d0eb004cc6edd",
+      "rank": 23,
+      "source": "reddit",
+      "fetchedVia": "rss",
+      "selection": "random",
+      "scoreLabel": "upvotes",
+      "pickedAt": "2026-10-19T13:52:47+00:00",
+      "blurb": "Breakfast is done, so this chocolate doxie has stretched out to full sausage length right between their human's legs on the recliner. Tennis is on the TV, but someone is clearly more interested in the post-meal nap."
+    },
     {
       "date": "2026-10-18",
       "title": "The wandering hermit dachshund emerges from his burrow",
