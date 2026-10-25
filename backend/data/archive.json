@@ -1,6 +1,25 @@
 {
-  "updatedAt": "2026-10-24T13:52:45+00:00",
+  "updatedAt": "2026-10-25T13:48:04+00:00",
   "days": [
+    {
+      "date": "2026-10-25",
+      "title": "I had to play dead today",
+      "subreddit": "Dachshund",
+      "author": "Whoopsy-381",
+      "score": null,
+      "permalink": "https://www.reddit.com/r/Dachshund/comments/1xenprc/i_had_to_play_dead_today/",
+      "mediaType": "image",
+      "mediaUrl": "https://i.redd.it/00aq8iw38ixh1.jpeg",
+      "width": 4032,
+      "height": 3024,
+      "thumbnail": "https://preview.redd.it/00aq8iw38ixh1.jpeg?width=640&crop=smart&auto=webp&s=9a182293089fdbfa1f80d8adf9e69a14f3f07c9d",
+      "rank": 5,
+      "source": "reddit",
+      "fetchedVia": "rss",
+      "selection": "random",
+      "scoreLabel": "upvotes",
+      "pickedAt": "2026-10-25T13:48:04+00:00"
+    },
     {
       "date": "2026-10-24",
       "title": "My unemployed Dachshund who loafs, Jimmy Ween",
