@@ -1,0 +1,45 @@
+{
+  "source": "x",
+  "date": "2026-10-28",
+  "postUrl": "https://x.com/tacogladiator/status/2115241572904378873",
+  "authorHandle": "tacogladiator",
+  "authorName": "jer",
+  "likes": 15,
+  "title": "The struggle is real when you're a long sausage dog",
+  "text": "The struggle is real when you’re a long sausage dog https://t.co/fKUFoC2uNg",
+  "blurb": "This white-and-brown doxie is doing battle with a pile of blankets on the couch, trying to get every inch of that long sausage body arranged just right. As the poster says, the struggle is real.",
+  "xMedia": {
+    "duration_ms": 9500,
+    "height": 1080,
+    "media_key": "13_2115241244980920320",
+    "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2115241244980920320/img/MS_9G3nbNknRP4QU.jpg",
+    "type": "video",
+    "variants": [
+      {
+        "content_type": "application/x-mpegURL",
+        "url": "https://video.twimg.com/amplify_video/2115241244980920320/pl/jIDKnmzq-4lICpl6.m3u8"
+      },
+      {
+        "bit_rate": 832000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2115241244980920320/vid/avc1/640x360/z5oNzNhBycM_Nb4o.mp4"
+      },
+      {
+        "bit_rate": 2176000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2115241244980920320/vid/avc1/1280x720/7qSI_jVTtMg9cIAF.mp4"
+      },
+      {
+        "bit_rate": 10368000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2115241244980920320/vid/avc1/1920x1080/EyHvEPnw3jWWmkfx.mp4"
+      },
+      {
+        "bit_rate": 256000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2115241244980920320/vid/avc1/480x270/NXt5r-bPBmGb8Ecd.mp4"
+      }
+    ],
+    "width": 1920
+  }
+}
