@@ -1,0 +1,40 @@
+{
+  "source": "x",
+  "date": "2026-11-07",
+  "postUrl": "https://x.com/AIandDesign/status/2118864463134896142",
+  "authorHandle": "AIandDesign",
+  "authorName": "⭕ AI & Design (Marco)",
+  "likes": 23,
+  "title": "Life with a wiener dog...",
+  "text": "Life with a wiener dog... https://t.co/35r9AOJn2N",
+  "blurb": "This dapple doxie pops up on their hind legs, paws folded like a polite little beggar, and follows their human around the room with big hopeful eyes. Life with a wiener dog, indeed.",
+  "xMedia": {
+    "duration_ms": 26838,
+    "height": 1280,
+    "media_key": "13_2118864412228628480",
+    "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2118864412228628480/img/1KN1YESvNS2eemxl.jpg",
+    "type": "video",
+    "variants": [
+      {
+        "bit_rate": 632000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2118864412228628480/vid/avc1/320x568/fkcpAChB0rBI18a6.mp4"
+      },
+      {
+        "bit_rate": 950000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2118864412228628480/vid/avc1/480x852/bh3Pd15rl2hvrrCR.mp4"
+      },
+      {
+        "bit_rate": 2176000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2118864412228628480/vid/avc1/720x1280/fGNlIpfKNhFmGOki.mp4"
+      },
+      {
+        "content_type": "application/x-mpegURL",
+        "url": "https://video.twimg.com/amplify_video/2118864412228628480/pl/QJJDwpprY0SVHxvy.m3u8"
+      }
+    ],
+    "width": 720
+  }
+}
