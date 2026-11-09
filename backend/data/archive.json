@@ -1,6 +1,29 @@
 {
-  "updatedAt": "2026-11-08T18:24:04+00:00",
+  "updatedAt": "2026-11-09T14:56:06+00:00",
   "days": [
+    {
+      "date": "2026-11-09",
+      "title": "My neighbor's mini weiner dog puppy Mia",
+      "subreddit": null,
+      "author": "AZCoolRay",
+      "authorHandle": "AZCoolRay",
+      "authorName": "AZCoolRay",
+      "score": 90,
+      "scoreLabel": "likes",
+      "likes": 90,
+      "permalink": "https://x.com/AZCoolRay/status/2119556202648797245",
+      "postUrl": "https://x.com/AZCoolRay/status/2119556202648797245",
+      "postId": "2119556202648797245",
+      "text": "My neighbor’s mini weiner dog puppy Mia. Little fart is only 4 lbs lol. Cute as hell. They tried talking me in to getting her brother who’s the same color.",
+      "width": 1337,
+      "height": 2048,
+      "mediaType": "image",
+      "mediaUrl": "https://pbs.twimg.com/media/HWotIgFbwAAKrGU.jpg",
+      "thumbnail": "https://pbs.twimg.com/media/HWotIgFbwAAKrGU.jpg?name=small",
+      "source": "x",
+      "blurb": "Meet Mia, a black-and-tan mini doxie puppy who weighs only 4 lbs and gazes up at the camera with enormous eyes and ears to match. The poster admits the neighbors nearly talked them into adopting her brother.",
+      "pickedAt": "2026-11-09T14:56:06+00:00"
+    },
     {
       "date": "2026-11-08",
       "title": "Long haired dachshund owners!!!",
@@ -18,7 +41,8 @@
       "fetchedVia": "rss",
       "selection": "random",
       "scoreLabel": "upvotes",
-      "pickedAt": "2026-11-08T18:24:04+00:00"
+      "pickedAt": "2026-11-08T18:24:04+00:00",
+      "blurb": "This chocolate-and-tan longhaired doxie has a white chest patch, wavy feathered ears, and a head tilt aimed straight at the camera. Their human was calling out to fellow longhaired dachshund owners."
     },
     {
       "date": "2026-11-07",
