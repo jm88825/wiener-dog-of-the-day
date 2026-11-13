@@ -1,0 +1,40 @@
+{
+  "source": "x",
+  "date": "2026-11-13",
+  "postUrl": "https://x.com/ElenaSWVA/status/2120879639732400441",
+  "authorHandle": "ElenaSWVA",
+  "authorName": "Elena",
+  "likes": 4,
+  "title": "My long haired doxie grand puppies make every day better",
+  "text": "Good Thursday morning from SW Virginia. My long haired doxie grand puppies make every day better. I highly recommend stepping away from all the noise and spending time outside with best friends. ❤️🐾 https://t.co/WKTbFC3cLb",
+  "blurb": "Two long-haired doxies in the autumn leaves have eyes only for the stick in their human's hand. The poster says these grand puppies make every day better, and recommends stepping away from the noise to spend time outside with best friends.",
+  "xMedia": {
+    "duration_ms": 24171,
+    "height": 1280,
+    "media_key": "13_2120879600364310529",
+    "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2120879600364310529/img/QO-A7NV731W0H7Y4.jpg",
+    "type": "video",
+    "variants": [
+      {
+        "bit_rate": 632000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2120879600364310529/vid/avc1/320x568/mTqmwR3y0Pjwh13Y.mp4"
+      },
+      {
+        "bit_rate": 950000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2120879600364310529/vid/avc1/480x852/YXmR1ZhbBRTUV2MR.mp4"
+      },
+      {
+        "bit_rate": 2176000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2120879600364310529/vid/avc1/720x1280/qtj9HZayW44rHSC1.mp4"
+      },
+      {
+        "content_type": "application/x-mpegURL",
+        "url": "https://video.twimg.com/amplify_video/2120879600364310529/pl/aj3lWCPSQ6FNdNC4.m3u8"
+      }
+    ],
+    "width": 720
+  }
+}
