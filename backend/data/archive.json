@@ -1,6 +1,26 @@
 {
-  "updatedAt": "2026-11-16T14:52:43+00:00",
+  "updatedAt": "2026-11-17T14:58:04+00:00",
   "days": [
+    {
+      "date": "2026-11-17",
+      "title": "Someone’s not willing to share",
+      "subreddit": "Dachshund",
+      "author": "YourFriendlyIdiotLol",
+      "score": null,
+      "permalink": "https://www.reddit.com/r/Dachshund/comments/1xy3pq1/someones_not_willing_to_share/",
+      "mediaType": "image",
+      "mediaUrl": "https://i.redd.it/rk42fd87z12i1.jpeg",
+      "width": 2476,
+      "height": 2834,
+      "thumbnail": "https://preview.redd.it/rk42fd87z12i1.jpeg?width=640&crop=smart&auto=webp&s=459278c3019c9d20257ca9a8fe6356f1fdde3e53",
+      "rank": 20,
+      "source": "reddit",
+      "fetchedVia": "rss",
+      "selection": "random",
+      "scoreLabel": "upvotes",
+      "pickedAt": "2026-11-17T14:58:04+00:00",
+      "blurb": "This black-and-tan doxie in a pink collar is standing guard over a well-chewed treat on an outdoor dog bed, giving the camera a serious side-eye. As the title says, someone is not willing to share."
+    },
     {
       "date": "2026-11-16",
       "title": "Dixie the Doxie says HI and night night",
