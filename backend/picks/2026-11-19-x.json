@@ -1,0 +1,35 @@
+{
+  "source": "x",
+  "date": "2026-11-19",
+  "postUrl": "https://x.com/TheeBomb4/status/2123420911709667706",
+  "authorHandle": "TheeBomb4",
+  "authorName": "peanut💋",
+  "likes": 0,
+  "title": "I am this dachshund insisting on a ball that will never be his",
+  "text": "i am this dachshund insisting on a ball that will never be his https://t.co/Oe1x3Zfugj",
+  "blurb": "A determined doxie squeezes his nose and one paw through the fence bars toward a tennis ball sitting just out of reach. The poster relates deeply to his unshakable optimism.",
+  "xMedia": {
+    "duration_ms": 9543,
+    "height": 728,
+    "media_key": "13_2123108365043671040",
+    "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2123108365043671040/img/dh3jH7SBMbCPSzCG.jpg",
+    "type": "video",
+    "variants": [
+      {
+        "bit_rate": 632000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2123108365043671040/vid/avc1/320x448/Rm2NrE7B5V-jw-zB.mp4"
+      },
+      {
+        "bit_rate": 950000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2123108365043671040/vid/avc1/520x728/dtexjEXeVQsGWvtx.mp4"
+      },
+      {
+        "content_type": "application/x-mpegURL",
+        "url": "https://video.twimg.com/amplify_video/2123108365043671040/pl/IlcQyrb3XLqNID9G.m3u8"
+      }
+    ],
+    "width": 520
+  }
+}
