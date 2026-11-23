@@ -1,0 +1,45 @@
+{
+  "source": "x",
+  "date": "2026-11-23",
+  "postUrl": "https://x.com/biffdon/status/2124667275466940854",
+  "authorHandle": "biffdon",
+  "authorName": "Know Nothing, Notice Everything",
+  "likes": 39,
+  "title": "Attempting to eat sandwich near mini dachshund",
+  "text": "Attempting to eat sandwich near mini dachshund (he already had some btw) https://t.co/WBM1thGNHH",
+  "blurb": "This black-and-tan mini dachshund is perched on a blanket, staring up at their human with a laser-focused look while they try to eat a sandwich. The poster notes he already had some, which clearly doesn't count.",
+  "xMedia": {
+    "duration_ms": 40896,
+    "height": 920,
+    "media_key": "13_2124667098920009728",
+    "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2124667098920009728/img/94KB33lom_QKxiXk.jpg",
+    "type": "video",
+    "variants": [
+      {
+        "bit_rate": 10368000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2124667098920009728/vid/avc1/1638x920/9sKyYw-SOINpX6QA.mp4"
+      },
+      {
+        "content_type": "application/x-mpegURL",
+        "url": "https://video.twimg.com/amplify_video/2124667098920009728/pl/6QYiA41LODnnOWFO.m3u8"
+      },
+      {
+        "bit_rate": 256000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2124667098920009728/vid/avc1/480x270/FoEWTzT3Vt9Er7FC.mp4"
+      },
+      {
+        "bit_rate": 2176000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2124667098920009728/vid/avc1/1280x720/hYqezuSE-PLTU0oJ.mp4"
+      },
+      {
+        "bit_rate": 832000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2124667098920009728/vid/avc1/640x360/U2BLCKbhie_yCCuc.mp4"
+      }
+    ],
+    "width": 1638
+  }
+}
