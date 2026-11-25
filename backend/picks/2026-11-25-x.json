@@ -1,0 +1,35 @@
+{
+  "source": "x",
+  "date": "2026-11-25",
+  "postUrl": "https://x.com/notwhatihurd/status/2125065135454617837",
+  "authorHandle": "notwhatihurd",
+  "authorName": "@kiandahalf",
+  "likes": 3,
+  "title": "Little weiner dog trying so hard to get her ball",
+  "text": "little weiner dog trying so hard to get her ball that's stuck behind the gate https://t.co/nUuWXzaQRS",
+  "blurb": "A determined little red doxie is doing everything she can to reach her ball, which has rolled just out of reach behind a bright red gate. Short legs, big effort, zero quit.",
+  "xMedia": {
+    "duration_ms": 8939,
+    "height": 510,
+    "media_key": "13_2125065124012601344",
+    "preview_image_url": "https://pbs.twimg.com/amplify_video_thumb/2125065124012601344/img/qNiUwYT_Dhptd_QC.jpg",
+    "type": "video",
+    "variants": [
+      {
+        "bit_rate": 632000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2125065124012601344/vid/avc1/320x340/Wjmga7qyJFwhSbJ6.mp4"
+      },
+      {
+        "bit_rate": 950000,
+        "content_type": "video/mp4",
+        "url": "https://video.twimg.com/amplify_video/2125065124012601344/vid/avc1/480x510/rzdROKtG4Zlw6WcA.mp4"
+      },
+      {
+        "content_type": "application/x-mpegURL",
+        "url": "https://video.twimg.com/amplify_video/2125065124012601344/pl/brRz973cF7C9kUDZ.m3u8"
+      }
+    ],
+    "width": 480
+  }
+}
